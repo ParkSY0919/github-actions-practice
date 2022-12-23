@@ -1,0 +1,24 @@
+name: test
+
+//이벤트를 on으로 표시
+on:
+  push :
+    branches:
+      - main
+  push_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3 // action을 쓸건데 github에서 제공하는 것을 사용
+      - name:
+        uses: actions/setup-node@v3
+      - run: npm install -g bats
+      - run: bats -v
+      - run: echo "힘내! 오늘도 힘내!"
+      - run: echo "나는 ${{github.actor}}야"
+      - run: echo "${{github.event_name}}에 의해서 자동으로 실행"
