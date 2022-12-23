@@ -1,11 +1,10 @@
 name: test
 
-//이벤트를 on으로 표시
 on:
   push :
     branches:
       - main
-  push_request:
+  pull_request:
     branches:
       - main
 
@@ -15,7 +14,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3 // action을 쓸건데 github에서 제공하는 것을 사용
-      - name:
+      - name: Node
         uses: actions/setup-node@v3
       - run: npm install -g bats
       - run: bats -v
