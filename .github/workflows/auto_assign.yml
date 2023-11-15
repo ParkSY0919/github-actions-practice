@@ -1,0 +1,24 @@
+addReviewers: true
+
+
+addAssignees: author
+
+
+reviewers:
+  - ParkSY0919
+  - name2
+  - name3
+
+numberOfReviewers: 3
+
+name: Auto Assign Action
+on:
+  - pull_request_target
+
+jobs:
+  add-reviews:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kentaro-m/auto-assign-action@v1.2.4
+        with:
+          configuration-path: ".github/workflows/auto_assign.yml"
