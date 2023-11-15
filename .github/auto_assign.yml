@@ -1,0 +1,12 @@
+addReviewers: true
+
+
+addAssignees: author
+
+
+reviewers:
+  - ParkSY0919
+  - name2
+  - name3
+
+numberOfReviewers: 3
